@@ -5,7 +5,9 @@
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel open:src",
-    "open:src":"babel-node buildScripts/srcServer.js",
+    "open:src": "babel-node buildScripts/srcServer.js",
+    "lint": "esw webpack.config.* src buildScripts",
+    "lint:watch":"npm run lint -- --watch",
     "localtunnel": "lt -h http://serverless.social --port 3000",
     "share": "npm-run-all --parallel open:src localtunnel"
   },
@@ -28,6 +30,8 @@
     "css-loader": "0.25.0",
     "eslint": "3.8.1",
     "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
     "eslint-watch": "2.1.14",
     "express": "^4.17.1",
     "extract-text-webpack-plugin": "1.0.1",
